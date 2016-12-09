@@ -1,10 +1,6 @@
 # movieList
 
-to run the app install depenedencies using NPM 
-
-'npm install'
-
-you need to a webserver, you can install http-server
+to run the app, you need a web server. Type in following commands to install it.
 
 'npm install -g http-server'
 'http-server'
