@@ -1,0 +1,86 @@
+<md-toolbar md-scroll-shrink>
+    <div class="md-tall custom-header-image">
+
+        <h1 class="ml-heading"><strong>Movie List</strong></h1>
+
+        <md-button ng-click="vm.openSidebar()">
+            <md-icon class="mdi mdi-plus-circle"></md-icon>
+            New Movie
+        </md-button>
+
+        <md-button ng-click="showFilters = !showFilters">
+            <md-icon class="mdi mdi-magnify"></md-icon>
+            Search
+        </md-button>
+
+    </div>
+</md-toolbar>
+
+<div class="filters" layout="row" layout-align="center center" ng-show="showFilters">
+    <md-input-container>
+        <label>Enter text to search</label>
+        <input ng-model="movieFilter" type="text">
+    </md-input-container>
+
+
+
+    <div layout="row">
+        <md-button ng-click="movieFilter = ''; category=''" class="md-warn">
+            Clear
+        </md-button>
+    </div>
+
+</div>
+
+<ui-view></ui-view>
+
+<md-content class="md-padding custom-background" layout="row" layout-wrap>
+    <md-card ng-repeat="movie in vm.movies | filter: movieFilter "
+             flex="20"
+             class="movie">
+        <img ng-src="{{ movie.image }}" class="md-card-image">
+        <md-card-content>
+            <div class="movie-info">
+
+            </div>
+
+
+
+            <div layout="row">
+                <md-button
+                        ng-click="vm.detailMovie(movie); hideDetail = false">
+                    Detail
+                </md-button>
+
+                <md-button
+                        ng-click="showAdmin = true"
+                        ng-show="!showAdmin">
+                    Admin
+                </md-button>
+
+                <md-button
+                        ng-click="showAdmin = false"
+                        ng-show="showAdmin">
+                    Close
+                </md-button>
+            </div>
+
+            <div class="movie-admin" ng-if="showAdmin">
+                <h3>Admin</h3>
+                <div layout="row">
+                    <md-button
+                            class="md-primary"
+                            ng-click="vm.editMovie(movie)">
+                        Edit
+                    </md-button>
+                    <md-button
+                            class="md-warn"
+                            ng-click="vm.deleteMovie($event, movie)">
+                        Delete
+                    </md-button>
+                </div>
+            </div>
+
+        </md-card-content>
+    </md-card>
+</md-content>

@@ -1,0 +1,27 @@
+<md-content class="md-padding custom-background" layout="row" layout-wrap ng-hide="hideDetail">
+    <md-card
+               flex="30"
+               class="movie">
+
+        <img ng-src="{{ vm.movie.image }}" class="md-card-image">
+
+        <md-card-content>
+            <div class="movie-info">
+                <h2 class="md-title">{{ vm.movie.title }}</h2>
+                <h3>{{ vm.movie.rating }}</h3>
+                <h4>{{ vm.movie.genre }}</h4>
+                <p>{{ vm.movie.description }}</p>
+            </div>
+
+            <div layout="row">
+                <md-button
+                        ng-click="hideDetail = true">
+                        BACK
+                </md-button>
+
+            </div>
+
+
+        </md-card-content>
+    </md-card>
+</md-content>

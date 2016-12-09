@@ -1,0 +1,48 @@
+
+button .material-icons {
+  margin-top: -11px;
+}
+
+.side-nav {
+  height: 110px;
+}
+
+.ml-heading{
+  font-family: 'Audiowide', cursive;
+  padding-left: 25px;
+}
+
+.side-nav h1{
+  padding-top: 50px;
+}
+
+.custom-background{
+  background-color: #71a7dd;
+}
+
+/* set background image of header*/
+.custom-header-image {
+  background-image: url("/images/banner.jpg");
+}
+
+/*.filters md-input-container {*/
+  /*margin-right: 10px;*/
+/*}*/
+
+.movie.ng-enter, .movie.ng-move {
+  transition: 0.4s all;
+  opacity: 0;
+}
+
+.movie.ng-enter.ng-enter-active, .movie.ng-move.ng-move-active {
+  opacity: 1;
+}
+
+.movie.ng-leave {
+  animation: 0.4s fade_movie;
+}
+
+@keyframes fade_movie {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
